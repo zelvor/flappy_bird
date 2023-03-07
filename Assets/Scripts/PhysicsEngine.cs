@@ -15,7 +15,7 @@ public class PhysicsEngine : MonoBehaviour
         verticalVelocity = 0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         GravityForce();
     }
