@@ -9,6 +9,7 @@ public class PhysicsEngine : MonoBehaviour
     private Vector3 velocity;
     private float verticalVelocity;
     private float gravity = -9.81f;
+
     private void Start()
     {
         velocity = Vector3.zero;
@@ -24,6 +25,10 @@ public class PhysicsEngine : MonoBehaviour
         verticalVelocity += gravity * gravityScale * Time.deltaTime;
         velocity = new Vector3(0, verticalVelocity, 0);
         transform.position += velocity * Time.deltaTime;
+    }
+
+    public void ResetVelocity(){
+        verticalVelocity = 0f;
     }
 
     public void JumpForce(float jumpForce){
