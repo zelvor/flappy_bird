@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
-        score = -3;
+        score = -2;
         // scoreText.text = score.ToString();
         scoreText.text = "0";
 
         FindObjectOfType<CheckCollision>().isGameOver = false;
-        player.transform.position = new Vector3(-3f, 2f, 0f);
+        player.transform.position = new Vector3(-0.5f, 2f, 0f);
 
         FindObjectOfType<PhysicsEngine>().ResetVelocity();
 

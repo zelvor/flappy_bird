@@ -7,7 +7,7 @@ public class CheckCollision : MonoBehaviour
 {
     private GameObject player;
 
-    private float radiusOfPlayer = 0.36f;
+    private float radiusOfPlayer = 0.4f;
 
     private GameObject pipes;
 
@@ -33,7 +33,7 @@ public class CheckCollision : MonoBehaviour
         foreach (GameObject pipe in pipes)
         {
             float distance = pipe.transform.position.x - player.transform.position.x;
-            if (distance > 0 && distance < nearestDistance)
+            if (distance > -1 && distance < nearestDistance)
             {
                 nearestDistance = distance;
                 nearestPipe = pipe;  
@@ -71,8 +71,8 @@ public class CheckCollision : MonoBehaviour
 
             isGameOver =
                 (
-                IsCollision(player, radiusOfPlayer, topPipe, 1.08f, 6.66f) ||
-                IsCollision(player, radiusOfPlayer, bottomPipe, 1.08f, 6.66f)
+                IsCollision(player, radiusOfPlayer, topPipe, 1.1f, 6.7f) ||
+                IsCollision(player, radiusOfPlayer, bottomPipe, 1.1f, 6.7f)
                 );
             
             if (isGameOver)

@@ -19,6 +19,11 @@ public class PhysicsEngine : MonoBehaviour
     private void FixedUpdate()
     {
         GravityForce();
+        if (verticalVelocity > 0){
+            ChangeRotationUp();
+        } else if (verticalVelocity < 0){
+            ChangeRotationDown();
+        }
     }
 
     private void GravityForce(){
@@ -36,4 +41,14 @@ public class PhysicsEngine : MonoBehaviour
         velocity = new Vector3(0, verticalVelocity, 0);
         transform.position += velocity * Time.deltaTime;
     }
+
+    private void ChangeRotationUp(){
+        transform.rotation = Quaternion.Euler(0, 0, 30);
+    }
+
+    private void ChangeRotationDown(){
+        // transform.rotation = Quaternion.Euler(0, 0, -60);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -60), 0.05f);
+    }
+
 }

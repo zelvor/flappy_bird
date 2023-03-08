@@ -7,8 +7,6 @@ public class Pipes : MonoBehaviour
     public float speed = 5f;
     private float leftEdge;
 
-    
-
     private void Start(){
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x * 1.5f;
     }
@@ -20,7 +18,6 @@ public class Pipes : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 
 
 }

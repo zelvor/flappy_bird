@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         }
         if (player.transform.position.y >= 4.7f)
         {
-            player.transform.position = new Vector3(-3f, 4.7f, 0f);
+            player.transform.position = new Vector3(-0.5f, 4.7f, 0f);
         }
     }
 
@@ -53,4 +53,5 @@ public class Player : MonoBehaviour
         }
         spriteRenderer.sprite = sprites[spriteIndex];
     }
+
 }
