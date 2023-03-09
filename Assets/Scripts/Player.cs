@@ -27,8 +27,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Press mouse, and the player will jump
-        if (Input.GetMouseButtonDown(0))
+        //Press mouse or space, and the player will jump
+
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
